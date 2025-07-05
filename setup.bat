@@ -1,4 +1,5 @@
 @echo off
+chcp 65001 > nul
 echo 🚀 Installation et démarrage de MedGemma IRMGemma
 echo ==================================================
 
@@ -24,7 +25,7 @@ if %errorlevel% neq 0 (
 REM Installation des dépendances Frontend
 echo 📦 Installation des dépendances Frontend...
 cd ..\Frontend
-call npm install
+call npm install --legacy-peer-deps
 if %errorlevel% neq 0 (
     echo ❌ Erreur lors de l'installation des dépendances Frontend
     exit /b 1
@@ -37,8 +38,8 @@ echo.
 echo 📋 Instructions pour démarrer l'application:
 echo 1. Configurez vos variables d'environnement dans Backend\.env
 echo 2. Ouvrez 2 terminaux:
-echo    Terminal 1 (Backend): cd Backend && npm run dev
-echo    Terminal 2 (Frontend): cd Frontend && npm run dev
+echo    Terminal 1 (Backend): cd Backend ^&^& npm run dev
+echo    Terminal 2 (Frontend): cd Frontend ^&^& npm run dev
 echo.
 echo 🌐 L'application sera accessible sur:
 echo    Frontend: http://localhost:3000
